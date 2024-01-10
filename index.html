@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>POS</title>
+    <meta name="keywords" content="HTML,CSS,Java Script, Pos System,malshi">
+    <meta name="description" content="Pos System details and my Pos System website.">
+    <meta name="revised" content="01/08/2023">
+    <meta name="author" content="Malshi Sathsarani">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="assets/lib/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="assets/lib/normalize.css">
+    <link rel="stylesheet" href="assets/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/styles/stylesForCustomer.css">
+    <link rel="stylesheet" href="assets/styles/stylesForLoginForm.css">
+    <link rel="stylesheet" href="assets/styles/stylesForDashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+</head>
+<body>
+
+<div class="container" id="login-section">
+    <div class="row" id="row">
+        <div class="col col-xl-6 col-lg-6  col-md-12 col-sm-12 col-12">
+            <h1 class="welcome">Welcome!</h1>
+            <h3 class="pos">To Pos System</h3>
+            <a href=""><img src="assets/image/fb.png" alt="fb"></a>
+            <a class="whatsapp" href=""><img src="assets/image/whatsapp.png" alt="fb"></a>
+        </div>
+
+        <div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+            <h1>Sign In</h1>
+            <form>
+                <form>
+                    <div class="mb-3">
+                        <input class="form-control-input" id="userName" type="text" required>
+                        <label for="userName" class="form-label">User Name</label>
+                    </div>
+                    <div class="mb-3">
+                        <input id="password" class="form-control-input" type="text" required>
+                        <label class="form-label" for="password">Password</label>
+                    </div>
+                    <a class="dashboard-navigation"><button type="button" class="btn btn-primary" id="btn">Sign In</button></a>
+                </form>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="dashboard-nav">
+    <header>
+        <a href="#" class="brand-logo"><span>POS SYSTEM</span></a>
+    </header>
+    <nav class="dashboard-nav-list">
+        <a class="dashboard-nav-item dashboard-navigation"><i class="fas fa-home"></i>Home </a>
+        <a class="dashboard-nav-item customer-nav"><i class="fas fa-user"></i> Customer </a>
+        <a class="dashboard-nav-item item-nav"><i class="fas fa-cogs"></i> Item </a>
+        <a class="dashboard-nav-item order-nav"><i class="fas fa-cogs"></i> Order </a>
+        <div class="nav-item-divider"></div>
+        <a class="dashboard-nav-item login-nav"><i class="fas fa-sign-out-alt"></i> Logout </a>
+    </nav>
+</div>
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <div class="container-fluid">
+            <span class="pos">Pos System</span>
+            <a class="navbar-brand dashboard-navigation" id="home-nav"><i class="fas fa-home"></i>Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active customer-nav" aria-current="page"><i class="fas fa-user"></i>Customer</a>
+
+                    <a class="nav-link active item-nav" aria-current="page"><i class="fas fa-user"></i>Item</a>
+
+                    <a class="nav-link active order-nav" aria-current="page"><i class="fas fa-user"></i>Order</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div id="customer-section" class="container">
+    <div class="row">
+        <div class="col">
+            <h1 class="title">Customers Details</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 data">
+            <form>
+                <div class="mb-3">
+                    <input class="form-control-input" id="customer_id" type="text" required>
+                    <label for="customer_id" class="form-label">Customer_Id</label>
+                </div>
+                <div class="mb-3">
+                    <input id="name" class="form-control-input" type="text" required>
+                    <label class="form-label" for="name">Name</label>
+                </div>
+                <div class="mb-3">
+                    <input id="address" class="form-control-input" type="text" required>
+                    <label class="form-label" for="address">Address</label>
+                </div>
+                <div class="mb-3">
+                    <input id="email" class="form-control-input" type="email" required>
+                    <label class="form-label" for="email">E-mail</label>
+                </div>
+                <div class="mb-3">
+                    <input id="phone" class="form-control-input" type="text" required>
+                    <label class="form-label" for="phone">Contact Number</label>
+                </div>
+                <div class="mt-4 mb-5" id="customer-batons">
+                    <button type="button" class="btn btn-success">Save</button>
+                    <button type="button" class="btn btn-primary">Update</button>
+                    <button type="button" class="btn btn-danger">Delete</button>
+                    <button type="reset" class="btn btn-warning">Clear</button>
+                </div>
+            </form>
+        </div>
+        <div class="col col-xl-6 col-lg-6  col-md-6 col-sm-12 col-12" id="table">
+            <input type="text" class="form-control mt-3" id="customer-search" placeholder="Search by First Name">
+            <table class="table mt-2" border="5px">
+                <thead>
+                <tr>
+                    <th scope="col">Customer_Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Contact</th>
+                </tr>
+                </thead>
+                <tbody id="customer-table-body">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id="item-section" class="container">
+    <div class="row">
+        <div class="col">
+            <h1 class="title">Item Details</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 data">
+            <form>
+                <div class="mb-3">
+                    <input class="form-control-input" id="item_code" type="text" required>
+                    <label for="item_code" class="form-label">Code</label>
+                </div>
+                <div class="mb-3">
+                    <input id="description" class="form-control-input" type="text" required>
+                    <label class="form-label" for="description">Description</label>
+                </div>
+                <div class="mb-3">
+                    <input id="price" class="form-control-input" type="number" required>
+                    <label class="form-label" for="price">Price</label>
+                </div>
+                <div class="mb-3">
+                    <input id="item_qty" class="form-control-input" type="number" required>
+                    <label class="form-label" for="item_qty">Qty</label>
+                </div>
+                <div class="mt-4 mb-5" id="item-batons">
+                    <button id="submit" type="button" class="btn btn-success">Save</button>
+                    <button id="update" type="button" class="btn btn-primary">Update</button>
+                    <button id="delete" type="button" class="btn btn-danger">Delete</button>
+                    <button id="reset" type="reset" class="btn btn-warning">Clear</button>
+                </div>
+            </form>
+        </div>
+        <div class="col col-xl-6 col-lg-6  col-md-6 col-sm-12 col-12" id="tabel">
+            <input type="text" class="form-control mt-3" id="item-search" placeholder="Search by First Name">
+            <table class="table mt-2" border="5px">
+                <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Unit Price</th>
+                    <th scope="col">Qty</th>
+                </tr>
+                </thead>
+                <tbody id="item_table-body">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id="order-section" class="container">
+    <div class="col">
+        <h1 class="title">Place Order</h1>
+    </div>
+    <div class="row">
+        <div class="col col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 data" >
+            <u class="topic"><h3 >Invoice Data</h3></u>
+            <form>
+                <div class="mb-3">
+                    <input id="orderId" class="form-control-input" type="text" required>
+                    <label for="orderId" class="form-label">Order Id</label>
+                </div>
+                <div class="mb-3">
+                    <input class="form-control-input" id="date" type="date" required>
+                    <label for="date" class="form-label">Order Date</label>
+                </div>
+                <div class="mb-3">
+<!--                    <input class="form-control-input" id="selectCusID" type="checkbox" required>-->
+                    <select name="customer_id" id="selectCusID">Customer Id</select>
+                    <label for="selectCusID" class="form-label">Customer Id</label>
+                </div>
+                <div class="mb-3">
+                    <input id="name-order" class="form-control-input" type="text" required>
+                    <label class="form-label" for="name-order">Name</label>
+                </div>
+            </form>
+        </div>
+        <div class="col col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 data">
+            <u class="topic"><h3 >Item Details</h3></u>
+            <form>
+                <div class="mb-3">
+<!--                    <input class="form-control-input" id="itemCode" type="text" required>-->
+                    <select name="item_code" id="itemCode">Item Code</select>
+                    <input class="form-control-input" id="item-Code" type="text" required>
+                    <label for="itemCode" class="form-label">Item Code</label>
+                </div>
+                <div class="mb-3">
+                    <input id="description-order" class="form-control-input" type="text" required>
+                    <label class="form-label" for="description-order">Description</label>
+                </div>
+                <div class="mb-3">
+                    <input id="price-order" class="form-control-input" type="number" required>
+                    <label class="form-label" for="price-order">Price</label>
+                </div>
+                <div class="mb-3">
+                    <input id="qty-order" class="form-control-input" type="number" required>
+                    <label class="form-label" for="qty-order">Qty</label>
+                </div>
+                <div class="mb-3">
+                    <input id="orderQty" class="form-control-input" type="number" required>
+                    <label class="form-label" for="orderQty">Order Qty</label>
+                </div>
+                <div class="mt-4 mb-5" id="add-button">
+                    <button id="add_item" type="button" class="btn btn-primary">Add Item</button>
+                </div>
+            </form>
+        </div>
+        <div class="col col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 data">
+            <form>
+                <div class="mb-3">
+                    <span id="total-text">Total : </span>
+                    <input id="total" class="form-control-input" type="number" required>
+                </div>
+<!--                <div class="mb-3">-->
+<!--                    <input id="cash" class="form-control-input" type="number" required>-->
+<!--                    <label class="form-label" for="cash">Cash</label>-->
+<!--                </div>-->
+<!--                <div class="mb-3">-->
+<!--                    <input id="balance" class="form-control-input" type="number" required>-->
+<!--                    <label class="form-label" for="balance">Balance</label>-->
+<!--                </div>-->
+                <div class="mt-4 mb-5" id="place-order">
+                    <button type="button" class="btn btn-success">Place Order</button>
+                </div>
+            </form>
+        </div>
+        <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style="height:180px; overflow-y: scroll">
+            <table class="table table-bordered text-white">
+                <thead class="bg-primary">
+                <tr>
+                    <th>Item Code</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+                </thead>
+                <tbody class="bg-light text-dark" id="order-table-body">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="assets/lib/jquery.min.js"></script>
+<script src="assets/lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/lib/fontawesome/js/all.min.js"></script>
+
+<script type="module" src="controller/CustomerController.js"></script>
+<script type="module" src="controller/ItemController.js"></script>
+<script type="module" src="controller/OrderController.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<script>
+    // console.log(customer_db.map((result)=>console.log(result.customer_id)))
+    // for (let i = 0; i < customer_db.length; i++) {
+    $('#order-section').css('display', 'none');
+    $('#item-section').css('display', 'none');
+    $('#customer-section').css('display', 'none');
+    $('.navbar').css('display', 'none');
+    $('.dashboard-nav').css('display', 'none');
+
+    $('.dashboard-navigation').on('click', () => {
+        $("#total").val(0);
+        $("#orderId").val(1);
+
+        let userName = $("#userName").val();
+        let password = $("#password").val();
+
+        if (userName == "malshi"){
+            if(password == 1234) {
+
+                $('.dashboard-nav').css('display', 'block');
+                $('#login-section').css('display', 'none');
+                $('#customer-section').css('display', 'none');
+                $('#item-section').css('display', 'none');
+                $('#order-section').css('display', 'none');
+                $('.navbar').css('display', 'none');
+            } else {
+                toastr.error('Invalid Password...');
+            }
+        }else{
+            toastr.error('Invalid User Name....');
+        }
+
+    });
+
+    $('.customer-nav').on('click', () => {
+        $('.dashboard-nav').css('display', 'none');
+        $('#login-section').css('display', 'none');
+        $('#customer-section').css('display', 'block');
+        $('#item-section').css('display', 'none');
+        $('#order-section').css('display', 'none');
+        $('.navbar').css('display', 'block');
+    });
+
+    $('.item-nav').on('click', () => {
+        $('.dashboard-nav').css('display', 'none');
+        $('#login-section').css('display', 'none');
+        $('#customer-section').css('display', 'none');
+        $('#item-section').css('display', 'block');
+        $('#order-section').css('display', 'none');
+        $('.navbar').css('display', 'block');
+    });
+
+    $('.order-nav').on('click', () => {
+        $('.dashboard-nav').css('display', 'none');
+        $('#login-section').css('display', 'none');
+        $('#customer-section').css('display', 'none');
+        $('#item-section').css('display', 'none');
+        $('#order-section').css('display', 'block');
+        $('.navbar').css('display', 'block');
+    });
+
+    $('.login-nav').on('click', () => {
+        $('.dashboard-nav').css('display', 'none');
+        $('#login-section').css('display', 'block');
+        $('#customer-section').css('display', 'none');
+        $('#item-section').css('display', 'none');
+        $('#order-section').css('display', 'nav');
+        $('.navbar').css('display', 'nav');
+    });
+
+
+</script>
+</body>
+</html>
