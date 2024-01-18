@@ -108,7 +108,7 @@
                     <label class="form-label" for="email">E-mail</label>
                 </div>
                 <div class="mb-3">
-                    <input id="phone" class="form-control-input" type="text" required>
+                    <input id="phone" class="form-control-input" type="number" required>
                     <label class="form-label" for="phone">Contact Number</label>
                 </div>
                 <div class="mt-4 mb-5" id="customer-batons">
@@ -119,7 +119,7 @@
                 </div>
             </form>
         </div>
-        <div class="col col-xl-6 col-lg-6  col-md-6 col-sm-12 col-12" id="table">
+        <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12" id="table">
             <input type="text" class="form-control mt-3" id="customer-search" placeholder="Search by First Name">
             <table class="table mt-2" border="5px">
                 <thead>
@@ -156,12 +156,12 @@
                     <label class="form-label" for="description">Description</label>
                 </div>
                 <div class="mb-3">
-                    <input id="price" class="form-control-input" type="number" required>
-                    <label class="form-label" for="price">Price</label>
-                </div>
-                <div class="mb-3">
                     <input id="item_qty" class="form-control-input" type="number" required>
                     <label class="form-label" for="item_qty">Qty</label>
+                </div>
+                <div class="mb-3">
+                    <input id="price" class="form-control-input" type="number" required>
+                    <label class="form-label" for="price">Price</label>
                 </div>
                 <div class="mt-4 mb-5" id="item-batons">
                     <button id="submit" type="button" class="btn btn-success">Save</button>
@@ -178,8 +178,8 @@
                 <tr>
                     <th scope="col">Id</th>
                     <th scope="col">Description</th>
-                    <th scope="col">Unit Price</th>
                     <th scope="col">Qty</th>
+                    <th scope="col">Unit Price</th>
                 </tr>
                 </thead>
                 <tbody id="item_table-body">
@@ -202,13 +202,9 @@
                     <label for="orderId" class="form-label">Order Id</label>
                 </div>
                 <div class="mb-3">
-                    <input class="form-control-input" id="date" type="date" required>
-                    <label for="date" class="form-label">Order Date</label>
-                </div>
-                <div class="mb-3">
-<!--                    <input class="form-control-input" id="selectCusID" type="checkbox" required>-->
                     <select name="customer_id" id="selectCusID">Customer Id</select>
                     <label for="selectCusID" class="form-label">Customer Id</label>
+                    <input class="form-control-input" id="customer-id" type="text" required>
                 </div>
                 <div class="mb-3">
                     <input id="name-order" class="form-control-input" type="text" required>
@@ -220,7 +216,6 @@
             <u class="topic"><h3 >Item Details</h3></u>
             <form>
                 <div class="mb-3">
-<!--                    <input class="form-control-input" id="itemCode" type="text" required>-->
                     <select name="item_code" id="itemCode">Item Code</select>
                     <input class="form-control-input" id="item-Code" type="text" required>
                     <label for="itemCode" class="form-label">Item Code</label>
@@ -252,21 +247,13 @@
                     <span id="total-text">Total : </span>
                     <input id="total" class="form-control-input" type="number" required>
                 </div>
-<!--                <div class="mb-3">-->
-<!--                    <input id="cash" class="form-control-input" type="number" required>-->
-<!--                    <label class="form-label" for="cash">Cash</label>-->
-<!--                </div>-->
-<!--                <div class="mb-3">-->
-<!--                    <input id="balance" class="form-control-input" type="number" required>-->
-<!--                    <label class="form-label" for="balance">Balance</label>-->
-<!--                </div>-->
                 <div class="mt-4 mb-5" id="place-order">
                     <button type="button" class="btn btn-success">Place Order</button>
                 </div>
             </form>
         </div>
         <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style="height:180px; overflow-y: scroll">
-            <table class="table table-bordered text-white">
+            <table class="table table-bordered text-white" id="order-table">
                 <thead class="bg-primary">
                 <tr>
                     <th>Item Code</th>
@@ -303,8 +290,7 @@
     $('.dashboard-nav').css('display', 'none');
 
     $('.dashboard-navigation').on('click', () => {
-        $("#total").val(0);
-        $("#orderId").val(1);
+
 
         let userName = $("#userName").val();
         let password = $("#password").val();
